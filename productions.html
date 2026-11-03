@@ -1,212 +1,263 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PRODUCTIONS | KLKSTUDIO</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRODUCTIONS | KLKSTUDIO</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      background: #080808;
-      color: #f5f5f5;
-      font-family: Arial, sans-serif;
-    }
+body {
+  background: #080808;
+  color: #f2f2f2;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-    header {
-      padding: 28px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #292929;
-    }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .13;
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  z-index: 5;
+}
 
-    .logo {
-      color: white;
-      font-size: 25px;
-      font-weight: 900;
-      letter-spacing: 2px;
-      text-decoration: none;
-    }
+header {
+  padding: 25px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
 
-    nav {
-      display: flex;
-      gap: 22px;
-      flex-wrap: wrap;
-    }
+.logo {
+  font-size: 23px;
+  font-weight: 1000;
+  letter-spacing: -2px;
+}
 
-    nav a {
-      color: #999;
-      text-decoration: none;
-      font-size: 11px;
-      letter-spacing: 2px;
-    }
+nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
 
-    nav a:hover,
-    nav a.active {
-      color: white;
-    }
+nav a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
 
-    main {
-      padding: 75px 10%;
-      min-height: 75vh;
-    }
+nav a:hover {
+  color: white;
+}
 
-    .tag {
-      color: #888;
-      font-size: 11px;
-      letter-spacing: 5px;
-      margin-bottom: 20px;
-    }
+main {
+  padding: 75px 7% 100px;
+}
 
-    h1 {
-      font-size: clamp(48px, 10vw, 100px);
-      letter-spacing: -5px;
-      margin-bottom: 20px;
-    }
+.tag {
+  color: #888;
+  font-size: 11px;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
 
-    .intro {
-      color: #888;
-      max-width: 550px;
-      line-height: 1.8;
-      margin-bottom: 65px;
-    }
+h1 {
+  font-size: clamp(55px, 11vw, 125px);
+  line-height: .85;
+  font-weight: 1000;
+  letter-spacing: -8px;
+}
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 35px;
-    }
+h1 span {
+  color: #777;
+}
 
-    .project img {
-      width: 100%;
-      aspect-ratio: 1;
-      object-fit: cover;
-      background: #191919;
-      border: 1px solid #333;
-      display: block;
-    }
+.intro {
+  color: #999;
+  max-width: 450px;
+  line-height: 1.7;
+  font-size: 14px;
+  margin-top: 30px;
+}
 
-    .project h2 {
-      font-size: 20px;
-      margin-top: 18px;
-      letter-spacing: 1px;
-    }
+.projects {
+  margin-top: 85px;
+}
 
-    .artist {
-      color: #777;
-      font-size: 12px;
-      margin-top: 8px;
-    }
+.project {
+  display: grid;
+  grid-template-columns: 80px 1fr 220px;
+  align-items: center;
+  gap: 25px;
+  padding: 30px 0;
+  border-top: 1px solid #383838;
+}
 
-    .service {
-      color: #bbb;
-      font-size: 11px;
-      letter-spacing: 2px;
-      margin-top: 15px;
-    }
+.project:last-child {
+  border-bottom: 1px solid #383838;
+}
 
-    .spotify {
-      display: block;
-      margin-top: 20px;
-      width: 100%;
-      height: 152px;
-      border: 0;
-      border-radius: 8px;
-    }
+.number {
+  color: #777;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
 
-    footer {
-      padding: 25px 8%;
-      border-top: 1px solid #292929;
-      color: #666;
-      font-size: 11px;
-      letter-spacing: 2px;
-    }
+.project h2 {
+  font-size: clamp(23px, 4vw, 42px);
+  font-weight: 1000;
+  letter-spacing: -2px;
+}
 
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        gap: 22px;
-      }
+.artist {
+  color: #888;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-top: 8px;
+}
 
-      nav {
-        justify-content: center;
-      }
-    }
-  </style>
+.services {
+  color: #aaa;
+  font-size: 10px;
+  line-height: 2;
+  letter-spacing: 2px;
+  text-align: right;
+}
+
+.status {
+  display: inline-block;
+  margin-top: 60px;
+  border: 1px solid #555;
+  padding: 14px 20px;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #aaa;
+}
+
+footer {
+  padding: 25px 7%;
+  border-top: 1px solid #333;
+  color: #666;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 700px) {
+  header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  nav {
+    gap: 14px;
+  }
+
+  main {
+    padding-top: 55px;
+  }
+
+  h1 {
+    letter-spacing: -5px;
+  }
+
+  .project {
+    grid-template-columns: 40px 1fr;
+    gap: 12px;
+  }
+
+  .services {
+    grid-column: 2;
+    text-align: left;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <a href="index.html" class="logo">KLKSTUDIO.</a>
+<header>
+  <div class="logo">KLKSTUDIO.</div>
 
-    <nav>
-      <a href="index.html">HOME</a>
-      <a href="music.html">MUSIC</a>
-      <a href="productions.html" class="active">PRODUCTIONS</a>
-      <a href="about.html">ABOUT</a>
-      <a href="contact.html">CONTACT</a>
-    </nav>
-  </header>
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="music.html">MUSIC</a>
+    <a href="productions.html">PRODUCTIONS</a>
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+</header>
 
-  <main>
-    <p class="tag">SELECTED WORKS</p>
+<main>
 
-    <h1>PRODUCTIONS.</h1>
+  <p class="tag">KLKSTUDIO / WORKS</p>
 
-    <p class="intro">
-      Trabajos realizados para artistas independientes.
-      Mezcla, mastering y producción musical.
-      Cada proyecto tiene su propia identidad sonora.
-    </p>
+  <h1>THE<br><span>PROCESS.</span></h1>
 
-    <section class="projects">
+  <p class="intro">
+    Cada canción tiene una identidad.
+    Cada producción tiene un proceso.
+    Este es el espacio donde el sonido toma forma.
+  </p>
 
-      <article class="project">
-        <img src="https://placehold.co/600x600/151515/ffffff?text=PROJECT+01"
-             alt="Portada del proyecto">
+  <section class="projects">
 
-        <h2>PRÓXIMAMENTE</h2>
-        <p class="artist">ARTISTA · CANCIÓN</p>
-        <p class="service">MIXING / MASTERING</p>
+    <article class="project">
+      <p class="number">01</p>
+      <div>
+        <h2>PROJECT 001</h2>
+        <p class="artist">ARTISTA / CANCIÓN</p>
+      </div>
+      <p class="services">
+        PRODUCCIÓN MUSICAL<br>
+        GRABACIÓN / MIXING
+      </p>
+    </article>
 
-        <!-- El reproductor de Spotify se agregará aquí -->
-      </article>
+    <article class="project">
+      <p class="number">02</p>
+      <div>
+        <h2>PROJECT 002</h2>
+        <p class="artist">ARTISTA / CANCIÓN</p>
+      </div>
+      <p class="services">
+        VOCAL EDITING<br>
+        MIXING / MASTERING
+      </p>
+    </article>
 
-      <article class="project">
-        <img src="https://placehold.co/600x600/151515/ffffff?text=PROJECT+02"
-             alt="Portada del proyecto">
+    <article class="project">
+      <p class="number">03</p>
+      <div>
+        <h2>PROJECT 003</h2>
+        <p class="artist">ARTISTA / CANCIÓN</p>
+      </div>
+      <p class="services">
+        PRODUCCIÓN MUSICAL<br>
+        MIXING / MASTERING
+      </p>
+    </article>
 
-        <h2>PRÓXIMAMENTE</h2>
-        <p class="artist">ARTISTA · CANCIÓN</p>
-        <p class="service">PRODUCCIÓN MUSICAL</p>
+  </section>
 
-        <!-- El reproductor de Spotify se agregará aquí -->
-      </article>
+  <div class="status">MORE PROJECTS COMING SOON</div>
 
-      <article class="project">
-        <img src="https://placehold.co/600x600/151515/ffffff?text=PROJECT+03"
-             alt="Portada del proyecto">
+</main>
 
-        <h2>PRÓXIMAMENTE</h2>
-        <p class="artist">ARTISTA · CANCIÓN</p>
-        <p class="service">MIXING / MASTERING</p>
-
-        <!-- El reproductor de Spotify se agregará aquí -->
-      </article>
-
-    </section>
-  </main>
-
-  <footer>
-    © 2026 KLKSTUDIO · ALL RIGHTS RESERVED
-  </footer>
+<footer>
+  KLKSTUDIO © 2026 / INDEPENDENT MUSIC PRODUCTION
+</footer>
 
 </body>
 </html>
