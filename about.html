@@ -1,229 +1,228 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ABOUT | KLKSTUDIO</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABOUT | KLKSTUDIO</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      background: #080808;
-      color: #f5f5f5;
-      font-family: Arial, sans-serif;
-    }
+body {
+  background: #080808;
+  color: #f2f2f2;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-    header {
-      padding: 28px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #292929;
-    }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .13;
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  z-index: 5;
+}
 
-    .logo {
-      color: white;
-      font-size: 25px;
-      font-weight: 900;
-      letter-spacing: 2px;
-      text-decoration: none;
-    }
+header {
+  padding: 25px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
 
-    nav {
-      display: flex;
-      gap: 22px;
-      flex-wrap: wrap;
-    }
+.logo {
+  font-size: 23px;
+  font-weight: 1000;
+  letter-spacing: -2px;
+}
 
-    nav a {
-      color: #999;
-      text-decoration: none;
-      font-size: 11px;
-      letter-spacing: 2px;
-    }
+nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
 
-    nav a:hover,
-    nav a.active {
-      color: white;
-    }
+nav a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
 
-    main {
-      padding: 85px 10%;
-    }
+nav a:hover {
+  color: white;
+}
 
-    .tag {
-      color: #888;
-      font-size: 11px;
-      letter-spacing: 5px;
-      margin-bottom: 20px;
-    }
+main {
+  padding: 80px 7% 110px;
+}
 
-    h1 {
-      font-size: clamp(55px, 10vw, 100px);
-      letter-spacing: -5px;
-      margin-bottom: 35px;
-    }
+.tag {
+  color: #888;
+  font-size: 11px;
+  letter-spacing: 4px;
+  margin-bottom: 25px;
+}
 
-    .description {
-      max-width: 700px;
-      color: #999;
-      font-size: 16px;
-      line-height: 2;
-      margin-bottom: 90px;
-    }
+h1 {
+  font-size: clamp(65px, 14vw, 160px);
+  line-height: .8;
+  font-weight: 1000;
+  letter-spacing: -10px;
+}
 
-    .section-title {
-      font-size: 30px;
-      letter-spacing: 2px;
-      margin-bottom: 35px;
-    }
+h1 span {
+  color: #777;
+}
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      border-top: 1px solid #333;
-    }
+.description {
+  max-width: 650px;
+  margin-top: 55px;
+  font-size: clamp(18px, 3vw, 25px);
+  line-height: 1.5;
+  color: #ccc;
+}
 
-    .service {
-      padding: 30px 20px 30px 0;
-      border-bottom: 1px solid #333;
-    }
+.description strong {
+  color: white;
+}
 
-    .service span {
-      color: #666;
-      font-size: 12px;
-    }
+.divider {
+  height: 1px;
+  background: #383838;
+  margin: 75px 0;
+}
 
-    .service h3 {
-      font-size: 19px;
-      margin-top: 15px;
-      letter-spacing: 1px;
-    }
+.section-title {
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: #888;
+  margin-bottom: 30px;
+}
 
-    .service p {
-      color: #777;
-      font-size: 13px;
-      line-height: 1.7;
-      margin-top: 12px;
-    }
+.services {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 50px;
+}
 
-    .statement {
-      margin-top: 100px;
-      padding: 45px 0;
-      border-top: 1px solid #333;
-      border-bottom: 1px solid #333;
-      font-size: clamp(25px, 5vw, 48px);
-      font-weight: 900;
-      line-height: 1.2;
-      letter-spacing: -1px;
-    }
+.service {
+  border-top: 1px solid #444;
+  padding: 22px 0;
+  font-size: clamp(18px, 3vw, 28px);
+  font-weight: bold;
+  letter-spacing: -1px;
+}
 
-    .statement span {
-      color: #777;
-    }
+.statement {
+  font-size: clamp(35px, 8vw, 90px);
+  font-weight: 1000;
+  line-height: .95;
+  letter-spacing: -5px;
+  margin-top: 85px;
+}
 
-    footer {
-      padding: 25px 8%;
-      border-top: 1px solid #292929;
-      color: #666;
-      font-size: 11px;
-      letter-spacing: 2px;
-    }
+.statement span {
+  color: #777;
+}
 
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        gap: 22px;
-      }
+footer {
+  padding: 25px 7%;
+  border-top: 1px solid #333;
+  color: #666;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
 
-      nav {
-        justify-content: center;
-      }
-    }
-  </style>
+@media (max-width: 700px) {
+  header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  nav {
+    gap: 14px;
+  }
+
+  main {
+    padding-top: 55px;
+  }
+
+  h1 {
+    letter-spacing: -5px;
+  }
+
+  .services {
+    grid-template-columns: 1fr;
+  }
+
+  .statement {
+    letter-spacing: -2px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <a href="index.html" class="logo">KLKSTUDIO.</a>
+<header>
+  <div class="logo">KLKSTUDIO.</div>
 
-    <nav>
-      <a href="index.html">HOME</a>
-      <a href="music.html">MUSIC</a>
-      <a href="productions.html">PRODUCTIONS</a>
-      <a href="about.html" class="active">ABOUT</a>
-      <a href="contact.html">CONTACT</a>
-    </nav>
-  </header>
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="music.html">MUSIC</a>
+    <a href="productions.html">PRODUCTIONS</a>
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+</header>
 
-  <main>
-    <p class="tag">WHO WE ARE</p>
+<main>
 
-    <h1>ABOUT.</h1>
+  <p class="tag">KLKSTUDIO / WHO WE ARE</p>
 
-    <p class="description">
-      KLKSTUDIO es un espacio independiente dedicado a la creación
-      y desarrollo musical. Un estudio donde las ideas toman forma
-      a través del sonido, la experimentación y la identidad de cada artista.
+  <h1>ABOUT<br><span>US.</span></h1>
 
-      <br><br>
+  <p class="description">
+    <strong>KLKSTUDIO</strong> es un estudio independiente
+    enfocado en la producción musical y el desarrollo
+    de identidades sonoras.
+    Un espacio para experimentar, crear y transformar
+    ideas en música.
+  </p>
 
-      Trabajamos en cada etapa del proceso creativo, desde la grabación
-      y edición vocal hasta la mezcla y el mastering.
-    </p>
+  <div class="divider"></div>
 
-    <h2 class="section-title">OUR SERVICES.</h2>
+  <p class="section-title">WHAT WE DO / SERVICES</p>
 
-    <section class="services">
+  <section class="services">
+    <div class="service">01 / PRODUCCIÓN MUSICAL</div>
+    <div class="service">02 / GRABACIÓN VOCAL</div>
+    <div class="service">03 / EDICIÓN DE VOCES</div>
+    <div class="service">04 / MIXING</div>
+    <div class="service">05 / MASTERING</div>
+  </section>
 
-      <article class="service">
-        <span>01 / PRODUCTION</span>
-        <h3>PRODUCCIÓN MUSICAL</h3>
-        <p>Desarrollo creativo y construcción del sonido de cada proyecto.</p>
-      </article>
+  <p class="statement">
+    SOUND IS<br>
+    <span>IDENTITY.</span><br>
+    CREATE YOUR OWN.
+  </p>
 
-      <article class="service">
-        <span>02 / RECORDING</span>
-        <h3>GRABACIÓN VOCAL</h3>
-        <p>Grabación de voces y acompañamiento durante el proceso.</p>
-      </article>
+</main>
 
-      <article class="service">
-        <span>03 / EDITING</span>
-        <h3>EDICIÓN DE VOCES</h3>
-        <p>Edición, afinación y preparación de voces.</p>
-      </article>
-
-      <article class="service">
-        <span>04 / MIXING</span>
-        <h3>MEZCLA</h3>
-        <p>Equilibrio, profundidad y personalidad sonora.</p>
-      </article>
-
-      <article class="service">
-        <span>05 / MASTERING</span>
-        <h3>MASTERING</h3>
-        <p>Terminación y preparación del sonido para su lanzamiento.</p>
-      </article>
-
-    </section>
-
-    <div class="statement">
-      SOUND IS IDENTITY.<br>
-      <span>CREATE YOUR OWN.</span>
-    </div>
-
-  </main>
-
-  <footer>
-    © 2026 KLKSTUDIO · ALL RIGHTS RESERVED
-  </footer>
+<footer>
+  KLKSTUDIO © 2026 / INDEPENDENT MUSIC PRODUCTION
+</footer>
 
 </body>
 </html>
