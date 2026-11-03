@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KLKSTUDIO | Music Production</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #080808;
+      color: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      padding: 28px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #292929;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #aaa;
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    main {
+      min-height: 78vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 70px 10%;
+    }
+
+    .tag {
+      color: #888;
+      letter-spacing: 5px;
+      font-size: 11px;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: clamp(55px, 12vw, 125px);
+      line-height: .9;
+      font-weight: 900;
+      letter-spacing: -6px;
+    }
+
+    h1 span {
+      color: #777;
+    }
+
+    .description {
+      color: #999;
+      margin-top: 30px;
+      line-height: 1.7;
+      max-width: 420px;
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 25px 8%;
+      border-top: 1px solid #292929;
+      color: #666;
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 22px;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      h1 {
+        letter-spacing: -3px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">KLKSTUDIO.</div>
+
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="music.html">MUSIC</a>
+      <a href="productions.html">PRODUCTIONS</a>
+      <a href="about.html">ABOUT</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="tag">INDEPENDENT MUSIC PRODUCTION</p>
+
+    <h1>KLK<span>STUDIO</span></h1>
+
+    <p class="description">
+      Un espacio dedicado a la creación musical.
+      Producción, grabación, mezcla y mastering.
+      Sonido propio. Identidad propia.
+    </p>
+  </main>
+
+  <footer>
+    © 2026 KLKSTUDIO · ALL RIGHTS RESERVED
+  </footer>
+</body>
+</html>
