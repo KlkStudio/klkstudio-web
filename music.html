@@ -1,194 +1,298 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MUSIC | KLKSTUDIO</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MUSIC | KLKSTUDIO</title>
 
-    body {
-      background: #080808;
-      color: #f5f5f5;
-      font-family: Arial, sans-serif;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    header {
-      padding: 28px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #292929;
-    }
+body {
+  background: #080808;
+  color: #f2f2f2;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
 
-    .logo {
-      color: white;
-      font-size: 25px;
-      font-weight: 900;
-      letter-spacing: 2px;
-      text-decoration: none;
-    }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .13;
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  z-index: 5;
+}
 
-    nav {
-      display: flex;
-      gap: 22px;
-      flex-wrap: wrap;
-    }
+header {
+  padding: 25px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
 
-    nav a {
-      color: #999;
-      text-decoration: none;
-      font-size: 11px;
-      letter-spacing: 2px;
-    }
+.logo {
+  font-size: 23px;
+  font-weight: 1000;
+  letter-spacing: -2px;
+}
 
-    nav a:hover, nav a.active {
-      color: white;
-    }
+nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
 
-    main {
-      padding: 75px 10%;
-      min-height: 75vh;
-    }
+nav a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
 
-    .tag {
-      color: #888;
-      font-size: 11px;
-      letter-spacing: 5px;
-      margin-bottom: 20px;
-    }
+nav a:hover {
+  color: white;
+}
 
-    h1 {
-      font-size: clamp(55px, 10vw, 100px);
-      letter-spacing: -5px;
-      margin-bottom: 15px;
-    }
+main {
+  padding: 75px 7% 100px;
+}
 
-    .intro {
-      color: #888;
-      margin-bottom: 65px;
-      line-height: 1.7;
-    }
+.tag {
+  color: #888;
+  font-size: 11px;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+}
 
-    .releases {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 35px;
-    }
+h1 {
+  font-size: clamp(65px, 13vw, 150px);
+  line-height: .8;
+  font-weight: 1000;
+  letter-spacing: -9px;
+  text-transform: uppercase;
+}
 
-    .release img {
-      width: 100%;
-      aspect-ratio: 1;
-      object-fit: cover;
-      background: #191919;
-      border: 1px solid #333;
-      display: block;
-    }
+h1 span {
+  color: #777;
+}
 
-    .release h2 {
-      font-size: 21px;
-      margin-top: 18px;
-      letter-spacing: 2px;
-    }
+.intro {
+  color: #999;
+  margin-top: 30px;
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 430px;
+}
 
-    .release p {
-      color: #777;
-      font-size: 12px;
-      margin-top: 8px;
-      letter-spacing: 2px;
-    }
+.releases {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 75px;
+}
 
-    .spotify {
-      display: inline-block;
-      margin-top: 18px;
-      color: white;
-      font-size: 11px;
-      text-decoration: none;
-      border: 1px solid #555;
-      padding: 11px 17px;
-      letter-spacing: 1px;
-    }
+.release {
+  border-top: 1px solid #444;
+  padding-top: 15px;
+}
 
-    .spotify:hover {
-      background: white;
-      color: black;
-    }
+.cover {
+  aspect-ratio: 1 / 1;
+  background: #171717;
+  border: 1px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+}
 
-    footer {
-      padding: 25px 8%;
-      border-top: 1px solid #292929;
-      color: #666;
-      font-size: 11px;
-      letter-spacing: 2px;
-    }
+.cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    135deg,
+    transparent,
+    transparent 8px,
+    rgba(255,255,255,.025) 9px
+  );
+}
 
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        gap: 22px;
-      }
+.cover span {
+  font-size: clamp(30px, 5vw, 65px);
+  font-weight: 1000;
+  letter-spacing: -5px;
+  text-align: center;
+  z-index: 1;
+  transform: rotate(-5deg);
+}
 
-      nav {
-        justify-content: center;
-      }
-    }
-  </style>
+.cover.anomo {
+  background: #171717;
+}
+
+.cover.tdr {
+  background: #252525;
+}
+
+.cover.vamonos {
+  background: #101010;
+}
+
+.cover.vamonos span {
+  color: #d22;
+}
+
+.number {
+  color: #777;
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 1000;
+  margin: 9px 0;
+  letter-spacing: -1px;
+}
+
+.type {
+  color: #888;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.listen {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 18px;
+  border: 1px solid #666;
+  color: white;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: .2s;
+}
+
+.listen:hover {
+  background: white;
+  color: black;
+}
+
+footer {
+  padding: 25px 7%;
+  border-top: 1px solid #333;
+  color: #666;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 700px) {
+  header {
+    align-items: flex-start;
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  nav {
+    gap: 14px;
+  }
+
+  main {
+    padding-top: 55px;
+  }
+
+  h1 {
+    letter-spacing: -5px;
+  }
+
+  .releases {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .cover span {
+    font-size: 65px;
+  }
+}
+</style>
 </head>
 
 <body>
-  <header>
-    <a href="index.html" class="logo">KLKSTUDIO.</a>
 
-    <nav>
-      <a href="index.html">HOME</a>
-      <a href="music.html" class="active">MUSIC</a>
-      <a href="productions.html">PRODUCTIONS</a>
-      <a href="about.html">ABOUT</a>
-      <a href="contact.html">CONTACT</a>
-    </nav>
-  </header>
+<header>
+  <div class="logo">KLKSTUDIO.</div>
 
-  <main>
-    <p class="tag">KLKSTUDIO RECORDS</p>
-    <h1>MUSIC.</h1>
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="music.html">MUSIC</a>
+    <a href="productions.html">PRODUCTIONS</a>
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+</header>
 
-    <p class="intro">
-      Lanzamientos, proyectos y sonidos propios.<br>
-      Una colección de trabajos que construyen nuestra identidad.
-    </p>
+<main>
+  <p class="tag">KLKSTUDIO / RELEASES</p>
 
-    <section class="releases">
+  <h1>OUR<br><span>MUSIC.</span></h1>
 
-      <article class="release">
-        <img src="https://placehold.co/600x600/151515/ffffff?text=ANOMO" alt="Portada ANOMO">
-        <h2>ANOMO</h2>
-        <p>EP · ALEJOKLK</p>
-        <a class="spotify" href="#" target="_blank">ESCUCHAR ↗</a>
-      </article>
+  <p class="intro">
+    Música, identidad y experimentación.
+    Una colección de proyectos y sonidos
+    desarrollados dentro de KLKSTUDIO.
+  </p>
 
-      <article class="release">
-        <img src="https://placehold.co/600x600/151515/ffffff?text=TDR" alt="Portada TDR">
-        <h2>TDR</h2>
-        <p>EP · ALEJOKLK</p>
-        <a class="spotify" href="#" target="_blank">ESCUCHAR ↗</a>
-      </article>
+  <section class="releases">
 
-      <article class="release">
-        <img src="https://placehold.co/600x600/151515/ffffff?text=vAmonos+Remix" alt="Portada vAmonos Remix">
-        <h2>vAmonos Remix</h2>
-        <p>SINGLE · ALEJOKLK</p>
-        <a class="spotify" href="#" target="_blank">ESCUCHAR ↗</a>
-      </article>
+    <article class="release">
+      <div class="cover anomo">
+        <span>ANOMO</span>
+      </div>
+      <p class="number">01 / EP</p>
+      <h2>ANOMO</h2>
+      <p class="type">ALEJOKLK</p>
+      <a class="listen" href="#" target="_blank">LISTEN NOW ↗</a>
+    </article>
 
-    </section>
-  </main>
+    <article class="release">
+      <div class="cover tdr">
+        <span>TDR</span>
+      </div>
+      <p class="number">02 / EP</p>
+      <h2>TDR</h2>
+      <p class="type">ALEJOKLK</p>
+      <a class="listen" href="#" target="_blank">LISTEN NOW ↗</a>
+    </article>
 
-  <footer>
-    © 2026 KLKSTUDIO · ALL RIGHTS RESERVED
-  </footer>
+    <article class="release">
+      <div class="cover vamonos">
+        <span>vAmonos</span>
+      </div>
+      <p class="number">03 / SINGLE</p>
+      <h2>vAmonos Remix</h2>
+      <p class="type">ALEJOKLK</p>
+      <a class="listen" href="#" target="_blank">LISTEN NOW ↗</a>
+    </article>
+
+  </section>
+</main>
+
+<footer>
+  KLKSTUDIO © 2026 / INDEPENDENT MUSIC PRODUCTION
+</footer>
+
 </body>
 </html>
